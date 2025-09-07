@@ -80,9 +80,7 @@ Produced corner plots of sampled parameters for transparency.
 
 ## How to Run the Code
 
-- Plotting scripts: `scripts/` 
-- Example notebook with PSD overlays: `notebooks/`  
-  - ⚠️ These notebooks require external `.dat` and `chains-1.txt` files, which are not included in this repository.  
+- Plotting scripts: `scripts/`  
 - Figures: `results/`  
 
 
