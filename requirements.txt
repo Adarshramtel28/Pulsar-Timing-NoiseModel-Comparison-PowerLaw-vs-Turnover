@@ -1,0 +1,16 @@
+# Core scientific stack
+numpy
+scipy
+matplotlib
+pandas
+
+# Bayesian inference
+dynesty
+ptmcmcsampler
+
+# Pulsar timing noise inference
+enterprise-pulsar
+
+# Plotting utilities
+corner
+seaborn
