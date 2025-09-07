@@ -9,16 +9,20 @@ Pulsar timing data often exhibit **red noise** (low-frequency noise). Two common
 This is the standard model for red noise, where the noise power decreases with frequency $f$ according to a spectral index $\gamma$. It's a simple and robust model for many astrophysical processes.
 
 The spectral shape is defined as:
+
 $$
 P(f) \propto f^{-\gamma}
 $$
+
 The fully parameterized form used in the analysis is:
+
 $$
 P(f) = \frac{A^2}{12\pi^2} (f_{\text{yr}})^{\gamma - 3} f^{-\gamma}
 $$
 
 **Parameters:**
 * **$A$**: The dimensionless amplitude of the red noise, typically specified as `log10_A`.
+
 * **$\gamma$**: The spectral index, which determines the steepness of the spectrum.
 
 ---
@@ -28,9 +32,11 @@ $$
 This model extends the simple power law by introducing a suppression of power below a certain "corner" frequency, $f_c$. 
 
 The spectrum is modeled as:
+
 $$
 P(f) = P_0 \left( \frac{f}{f_{\text{yr}}} \right)^{-\gamma} \left[ 1 + \left(\frac{f_c}{f}\right)^\kappa \right]^{-2\beta}
 $$
+
 where $P_0 = \frac{A^2}{12\pi^2 f_{\text{yr}}^3}$ is a constant amplitude factor.
 
 **Parameters:**
@@ -54,19 +60,22 @@ The aim: determine whether a turnover model is required, or whether a simple pow
 | **WN+CF**  | EFAC + EQUAD + turnover red noise. |
 | **WN**     | (white-noise only model) |
 
-Bayesian evidence (\(\log Z\)) was computed using **Enterprise** with **DYNESTY**. Priors followed Grover et al. (2024) and Parthasarathy et al. (2019). Following the conventions of Kass & Raftery (1995), we interpret Bayes factors (Δlog Z) using the scale:
-\[
+Bayesian evidence ($\log Z$) was computed using **Enterprise** with **DYNESTY**. Priors followed Grover et al. (2024) and Parthasarathy et al. (2019). Following the conventions of Kass & Raftery (1995), we interpret Bayes factors ($\Delta\log Z$) using the scale:
+
+$$
 \Delta\log Z = \log Z_{\text{best}} - \log Z_{\text{model}}.
-\]
+$$
+
 Larger positive \(\Delta\log Z\) indicates stronger evidence **against** the tested model when compared to the best fit model.
 
 A practical interpretation guide (approximate):
-- \(\Delta\log Z \lesssim 1\): negligible / inconclusive  
-- \(1 \lesssim \Delta\log Z \lesssim 3\): weak-to-moderate evidence  
-- \(3 \lesssim \Delta\log Z \lesssim 5\): strong evidence  
-- \(\Delta\log Z \gtrsim 5\): very strong / decisive evidence
 
-> **Note:** Each reported \(\log Z\) has sampling uncertainty (± value). When \(\Delta\log Z\) is comparable to the \(\log Z\) uncertainties, interpret the result cautiously.
+- $\Delta\log Z \lesssim 1$: negligible / inconclusive
+- $1 \lesssim \Delta\log Z \lesssim 3$: weak-to-moderate evidence
+- $3 \lesssim \Delta\log Z \lesssim 5$: strong evidence
+- $\Delta\log Z \gtrsim 5$: very strong / decisive evidence
+
+> **Note:** Each reported $\log Z$ has sampling uncertainty (± value). When \(\Delta\log Z\) is comparable to the \(\log Z\) uncertainties, interpret the result cautiously.
 
 ---
 
@@ -75,7 +84,7 @@ A practical interpretation guide (approximate):
 ### Pulsar **J0729-1836**
 Best model: **F+RN** 
 
-| Model    | \(\Delta\log Z = \log Z_{\text{best}} - \log Z_{\text{model}}\) |
+| Model    | $\Delta\log Z = \log Z_{\text{best}} - \log Z_{\text{model}}$ |
 |----------|------------------------------------------------------------------:|
 | **F+RN** | 0.0000 |
 | WN+RN    | 0.8922 |
@@ -90,7 +99,7 @@ Best model: **F+RN**
 ### Pulsar **J1910-0309** 
 Best model: **WN+RN** 
 
-| Model    | \(\Delta\log Z = \log Z_{\text{best}} - \log Z_{\text{model}}\) |
+| Model    | $\Delta\log Z = \log Z_{\text{best}} - \log Z_{\text{model}}$  |
 |----------|-----------------------------------------------------------------:|
 | **WN+RN**| 0.0000 |
 | F+RN     | 0.0814 |
@@ -107,8 +116,8 @@ Best model: **WN+RN**
 ## Overall interpretation 
 
 - **Both pulsars prefer simple power-law descriptions** of red noise.  
-- For J0729-1836, there is evidence against turnover models (\(\Delta\log Z \gtrsim 3.6\)).  
-- For J1910-0309, turnover models are disfavored (\(\Delta\log Z \gtrsim 9\)), and the small difference between WN+RN and F+RN is **not significant** compared to sampling uncertainties.
+- For J0729-1836, there is evidence against turnover models ($\Delta\log Z \gtrsim 3.6$).  
+- For J1910-0309, turnover models are disfavored ($\Delta\log Z \gtrsim 9$), and the small difference between WN+RN and F+RN is **not significant** compared to sampling uncertainties.
 - To detect a turnover robustly one would likely need longer baselines or more sensitive timing to increase evidence separation, and a larger pulsar sample[Parthasarathy A., et al. (2019)].
 
 ---
